@@ -5,7 +5,7 @@ let On = 0;
 button.onclick = () => {
   let i;
   rotation.classList.toggle("try-open-light");
-  i = (Math.random() * 10).toFixed();
+  i = Math.random() * 10;
   if (On === 0 && i < 2) {
     On = 1;
     rotation.classList.remove("try-open-light");
