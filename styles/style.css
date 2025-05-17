@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+body {
+  max-height: 100vh;
+  background-color: hsl(0, 0%, 17.8%);
+  z-index: 10;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.image-light-container {
+  display: flex;
+  align-items: center;
+  margin: 5em;
+}
+.try-open-light {
+  animation: flash 2s forwards;
+}
+.img-container {
+  position: relative;
+  width: 100%;
+}
+.flash-img {
+  height: 200px;
+  transform: rotate(53.5deg);
+  user-select: none;
+}
+.open-flash {
+  position: absolute;
+  top: 6.8em;
+  left: 6.45em;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 5;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.open-flash:hover {
+  background-color: #e0b030;
+  border-color: #c89c00;
+  border: 2px solid black;
+}
+.open-flash:active {
+  background-color: #d9a800;
+  border-color: #c89c00;
+  transform: scale(0.95);
+  border: 2px solid black;
+}
+
+.light {
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 10.4em;
+  top: 4.65em;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 0, 1) 0%,
+    rgba(255, 255, 0, 0.9) 15%,
+    rgba(255, 255, 0, 0.6) 30%,
+    rgba(255, 255, 0, 0.4) 50%,
+    rgba(255, 255, 0, 0) 80%
+  );
+  pointer-events: none;
+  height: 11.7em;
+  width: 30em;
+  clip-path: polygon(0 38%, 100% 24%, 100% 86%, 0 73%);
+}
+.open-light {
+  display: block;
+  animation: lightOn 4s forwards;
+  left: 17.94em;
+}
+.instructions {
+  display: flex;
+  margin: -2em;
+  justify-self: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30em;
+  gap: 0.5em;
+}
+.instructions h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffd446;
+  text-transform: capitalize;
+}
+.instructions p {
+  font-size: 1rem;
+  background-color: rgb(32, 32, 32);
+  border-radius: 0.2em;
+  color: aliceblue;
+  padding: 1em;
+  line-height: 1.4em;
+}
+@keyframes lightOn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    transform: rotate(1deg);
+  }
+  10% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(1deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
